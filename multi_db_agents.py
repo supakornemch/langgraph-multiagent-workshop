@@ -11,6 +11,10 @@ from langgraph.types import Command
 from langgraph.prebuilt import create_react_agent
 from langchain_community.vectorstores import Chroma
 from dotenv import load_dotenv
+import warnings
+
+# --- 0. Suppress Deprecation Warnings (LangGraph 1.0 specific) ---
+warnings.filterwarnings("ignore", message=".*create_react_agent has been moved.*")
 
 # Load env for OPENAI_API_KEY
 load_dotenv()
